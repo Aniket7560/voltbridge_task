@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.marquee-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjusted height to better fit content */
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.marquee {
+    display: flex;
+    width: 200%; /* Must be double the width of the container */
+    animation: marquee-animation 10s linear infinite;
+}
+
+.marquee-content {
+    display: flex;
+    width: 100%; /* Each content block is 100% of the container width */
+}
+
+.review-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-card img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-name {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.review-username {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+}
+
+.review-body {
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+}
+
+@keyframes marquee-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.fade-left, .fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.fade-left {
+    left: 0;
+}
+
+.fade-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
